@@ -1,5 +1,4 @@
-import Storage from 'helper-storage';
-let storage = new Storage();
+import localForage from "localforage";
 
 export const state = {
     flag: false,
@@ -17,8 +16,8 @@ export const getters = {
 
 export const actions = {
     onGetProducts({ commit }) {
-        storage.app().get('cart', (e, v) => {
-            commit('SET_PRODUCTS', v ? v : []);
+        localForage.getItem('cart', (err, value) => {
+            commit('SET_PRODUCTS', value ? value : []);
         });
     },
     onAddToCart({ commit }, item) {
@@ -41,14 +40,14 @@ export const mutations = {
     ADD_TO_CART(state, param) {
         state.products.push(param);
         state.flag = true;
-        storage.app().add('cart', state.products);
+        localForage.setItem('cart', state.products);
     },
     REMOVE_FROM_CART(state, item) {
         state.products.splice(
             state.products.indexOf(item), 1
         );
-        storage.app().remove('cart', (e, k) => {
-            storage.app().add('cart', state.products);
+        localForage.removeItem('cart', () => {
+            localForage.setItem('cart', state.products);
         });
     }
 };

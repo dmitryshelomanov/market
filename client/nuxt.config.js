@@ -16,20 +16,11 @@ module.exports = {
     },
     build: {
         babel: {
-            presets: ["es2015", "stage-0", "stage-1", "stage-2", "stage-3"],
+            presets: ["es2015", "stage-0", "stage-1", "stage-2", "stage-3"]
         },
-        loaders: [
-            {
-                test: /\js$/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ["es2015", "stage-0", "stage-1", "stage-2", "stage-3"],
-                }
-            }
-        ],
-        vendor: ['axios']
+        vendor: ['axios', 'localforage']
     },
     plugins: [
-        { src: '~plugins/helperStorage.js', ssr: false }
+        
     ]
 };
