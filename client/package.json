@@ -8,6 +8,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "predeploy": "npm run generate",
     "deploy": "npx gh-pages -d dist"
   },
   "keywords": [],
