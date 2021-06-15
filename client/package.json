@@ -7,7 +7,9 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "predeploy": "npm run generate",
+    "deploy": "npx gh-pages -d dist"
   },
   "keywords": [],
   "author": "userbq201<yzdrf98@mail.ru>",
