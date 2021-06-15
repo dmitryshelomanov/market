@@ -8,8 +8,8 @@ module.exports = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
     ],
     link: [
-      { rel: "stylesheet", href: "/css/main.css" },
-      { rel: "stylesheet", href: "/css/font-awesome.min.css" },
+      { rel: "stylesheet", href: "/market/css/main.css" },
+      { rel: "stylesheet", href: "/market/css/font-awesome.min.css" },
       { rel: "stylesheet", href: "https://unpkg.com/microtip/microtip.css" },
       {
         rel: "stylesheet",
